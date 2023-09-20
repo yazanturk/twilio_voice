@@ -858,7 +858,7 @@ public class SwiftTwilioVoicePlugin: NSObject, FlutterPlugin,  FlutterStreamHand
             callUpdate.supportsDTMF = false
             callUpdate.supportsHolding = false
             callUpdate.supportsGrouping = false
-            callUpdate.supportsUngrouping = false
+            callUpdate.supportsUngrouping = true
             callUpdate.hasVideo = false
             
             self.callKitProvider.reportCall(with: uuid, updated: callUpdate)
@@ -871,10 +871,10 @@ public class SwiftTwilioVoicePlugin: NSObject, FlutterPlugin,  FlutterStreamHand
         let callUpdate = CXCallUpdate()
         callUpdate.remoteHandle = callHandle
         callUpdate.localizedCallerName = clients[from] ?? self.clients["defaultCaller"] ?? defaultCaller
-        callUpdate.supportsDTMF = true
+        callUpdate.supportsDTMF = false
         callUpdate.supportsHolding = true
         callUpdate.supportsGrouping = false
-        callUpdate.supportsUngrouping = false
+        callUpdate.supportsUngrouping = true
         callUpdate.hasVideo = false
         
         callKitProvider.reportNewIncomingCall(with: uuid, update: callUpdate) { error in
