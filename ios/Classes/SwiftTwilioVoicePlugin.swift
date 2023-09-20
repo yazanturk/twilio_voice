@@ -859,7 +859,7 @@ public class SwiftTwilioVoicePlugin: NSObject, FlutterPlugin,  FlutterStreamHand
             callUpdate.supportsHolding = false
             callUpdate.supportsGrouping = false
             callUpdate.supportsUngrouping = true
-            callUpdate.hasVideo = false
+            callUpdate.hasVideo = true
             
             self.callKitProvider.reportCall(with: uuid, updated: callUpdate)
         }
@@ -875,7 +875,7 @@ public class SwiftTwilioVoicePlugin: NSObject, FlutterPlugin,  FlutterStreamHand
         callUpdate.supportsHolding = false
         callUpdate.supportsGrouping = false
         callUpdate.supportsUngrouping = true
-        callUpdate.hasVideo = false
+        callUpdate.hasVideo = true
         
         callKitProvider.reportNewIncomingCall(with: uuid, update: callUpdate) { error in
             if let error = error {
