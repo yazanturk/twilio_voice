@@ -104,7 +104,7 @@ open class TVCallConnection(
         this.onEvent = onEvent
         this.onAction = onAction
         audioModeIsVoip = true
-        connectionCapabilities = CAPABILITY_MUTE or CAPABILITY_HOLD or CAPABILITY_SUPPORT_HOLD
+        connectionCapabilities = CAPABILITY_MUTE
     }
 
     fun setOnCallDisconnected(handler: CompletionHandler<DisconnectCause>) {
