@@ -855,9 +855,9 @@ public class SwiftTwilioVoicePlugin: NSObject, FlutterPlugin,  FlutterStreamHand
             let callUpdate = CXCallUpdate()
             callUpdate.remoteHandle = callHandle
             callUpdate.localizedCallerName = "ahmad samir test"
-            callUpdate.supportsDTMF = false
-            callUpdate.supportsHolding = false
-            callUpdate.supportsGrouping = false
+            callUpdate.supportsDTMF = true
+            callUpdate.supportsHolding = true
+            callUpdate.supportsGrouping = true
             callUpdate.supportsUngrouping = true
             callUpdate.hasVideo = true
             
@@ -871,9 +871,9 @@ public class SwiftTwilioVoicePlugin: NSObject, FlutterPlugin,  FlutterStreamHand
         let callUpdate = CXCallUpdate()
         callUpdate.remoteHandle = callHandle
         callUpdate.localizedCallerName = clients[from] ?? self.clients["defaultCaller"] ?? defaultCaller
-        callUpdate.supportsDTMF = false
-        callUpdate.supportsHolding = false
-        callUpdate.supportsGrouping = false
+        callUpdate.supportsDTMF = true
+        callUpdate.supportsHolding = true
+        callUpdate.supportsGrouping = true
         callUpdate.supportsUngrouping = true
         callUpdate.hasVideo = true
         
