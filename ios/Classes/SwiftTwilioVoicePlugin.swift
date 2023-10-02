@@ -113,6 +113,7 @@ public class SwiftTwilioVoicePlugin: NSObject, FlutterPlugin,  FlutterStreamHand
                 TwilioVoiceSDK.register(accessToken: token, deviceToken: deviceToken) { (error) in
                     if let error = error {
                         self.sendPhoneCallEvents(description: "LOG|An error occurred while registering: \(error.localizedDescription)", isError: false)
+                        self.sendPhoneCallEvents(description: "LOG|An error occurred while registering: \(error)", isError: false)
                     }
                     else {
                         self.sendPhoneCallEvents(description: "LOG|Successfully registered for VoIP push notifications.", isError: false)
@@ -491,6 +492,7 @@ public class SwiftTwilioVoicePlugin: NSObject, FlutterPlugin,  FlutterStreamHand
         TwilioVoiceSDK.unregister(accessToken: token, deviceToken: deviceToken) { (error) in
             if let error = error {
                 self.sendPhoneCallEvents(description: "LOG|An error occurred while unregistering: \(error.localizedDescription)", isError: false)
+                self.sendPhoneCallEvents(description: "LOG|An error occurred while unregistering: \(error)", isError: false)
             } else {
                 self.sendPhoneCallEvents(description: "LOG|Successfully unregistered from VoIP push notifications.", isError: false)
             }
