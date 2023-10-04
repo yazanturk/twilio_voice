@@ -178,7 +178,7 @@ class TwilioVoicePlugin : FlutterPlugin, MethodCallHandler, EventChannel.StreamH
             override fun onRinging(call: Call) {
                 Log.d(TAG, "onRinging")
                 // TODO - outgoing call check
-                val list = arrayOf("Ringing", call.from ?: "", call.to ?: "", "Incoming")
+                val list = arrayOf("Ringing", "MrFixit" ?: "", call.to ?: "", "Incoming")
                 logEvents("", list)
             }
 
@@ -196,7 +196,7 @@ class TwilioVoicePlugin : FlutterPlugin, MethodCallHandler, EventChannel.StreamH
             override fun onConnected(call: Call) {
                 Log.d(TAG, "onConnected")
                 // TODO - outgoing call check
-                val list = arrayOf("Connected", call.from ?: "", call.to ?: "", "Incoming")
+                val list = arrayOf("Connected", "Mrfixit" ?: "", call.to ?: "", "Incoming")
                 logEvents("", list)
             }
 
